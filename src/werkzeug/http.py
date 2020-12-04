@@ -1155,7 +1155,7 @@ def dump_cookie(
         expires = to_bytes(cookie_date(time() + max_age))
 
     samesite = samesite.title() if samesite else None
-    if samesite not in ("Strict", "Lax", None):
+    if samesite not in ("Strict", "Lax", "None"):
         raise ValueError("invalid SameSite value; must be 'Strict', 'Lax' or None")
 
     buf = [key + b"=" + _cookie_quote(value)]
